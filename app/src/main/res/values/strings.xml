@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChemceeCherian_COMP304Lab4</string>
+    <string name="login_doctor">DOCTOR LOGIN</string>
+    <string name="login_nurse">NURSE LOGIN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="hospitalLogoDesc">HospitalLogo</string>
+</resources>
