@@ -22,19 +22,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_doctor"
-        android:id="@+id/button_doctorLogin"
+        android:text="@string/login"
+        android:id="@+id/button_login"
+        android:layout_marginTop="168dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="169dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_nurse"
-        android:id="@+id/button_loginNurse"
-        android:layout_below="@+id/button_doctorLogin"
-        android:layout_alignStart="@+id/button_doctorLogin"
-        android:layout_marginTop="26dp"
-        android:layout_alignEnd="@+id/button_doctorLogin" />
+        android:text="@string/signup"
+        android:id="@+id/button_signup"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/button_login"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
