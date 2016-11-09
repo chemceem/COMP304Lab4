@@ -24,11 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="User ID"
         android:ems="10"
         android:id="@+id/empId"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="User ID" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -39,7 +39,54 @@
         android:layout_below="@+id/empId"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/empId"
-        android:text="Password" />
+        android:elegantTextHeight="false"
+        android:hint="Password" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/buttonLogin"
+        android:textStyle="bold"
+        android:layout_above="@+id/textView_RegisterHere"
+        android:layout_alignEnd="@+id/radioGroup"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registerHere"
+        android:id="@+id/textView_RegisterHere"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp"
+        android:clickable="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_below="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:weightSum="1"
+        android:layout_above="@+id/buttonLogin">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="52sp"
+            android:id="@+id/radioButton_Doctor"
+            android:text="@string/login_doctor"
+            android:textStyle="bold"
+            android:layout_weight="0.19" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="52sp"
+            android:id="@+id/radioButton_Nurse"
+            android:text="@string/login_nurse"
+            android:textStyle="bold" />
+    </RadioGroup>
 
 
 </RelativeLayout>
