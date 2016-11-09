@@ -4,7 +4,6 @@
     <string name="login_doctor">DOCTOR</string>
     <string name="login_nurse">NURSE</string>
     <string name="signup">SIGN UP</string>
-    <string name="login">LOGIN</string>
     <string name="hospitalLogoDesc">HospitalLogo</string>
     <string name="title_activity_login">Sign in</string>
     <string name="registerHere">New User? Register Here</string>
