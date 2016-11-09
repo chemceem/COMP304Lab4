@@ -7,30 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.chemcee.chemceecherian_comp304lab4.MainActivity"
-    android:weightSum="1">
+    android:background="#ffffff">
 
     <ImageView
-        android:layout_width="185dp"
-        android:layout_height="205dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/hospital"
-        android:contentDescription="@string/hospitalLogoDesc"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="339dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/hospitalLogoDesc" />
 
-    <EditText
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/empId"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:hint="User ID" />
+        android:hint="User ID" 
+		android:textColor="#ffffff"
+        android:background="@android:color/holo_green_dark" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -87,6 +89,5 @@
             android:text="@string/login_nurse"
             android:textStyle="bold" />
     </RadioGroup>
-
 
 </RelativeLayout>
