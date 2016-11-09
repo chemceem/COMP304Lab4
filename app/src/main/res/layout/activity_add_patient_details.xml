@@ -198,6 +198,7 @@
         android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
-        android:background="@android:color/holo_green_dark" />
+        android:background="@android:color/holo_green_dark"
+        android:onClick="onSubmit"/>
 
 </RelativeLayout>
