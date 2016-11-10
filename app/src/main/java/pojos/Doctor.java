@@ -9,6 +9,7 @@ public class Doctor {
     private String firstName;
     private String lastName;
     private String department;
+    private String password;
 
     public static final String TABLE = "doctor";
     public static final String TAG = Doctor.class.getSimpleName();
@@ -16,11 +17,12 @@ public class Doctor {
     public Doctor() {
     }
 
-    public Doctor(int doctorId, String firstName, String lastName, String department) {
+    public Doctor(int doctorId, String firstName, String lastName, String department, String password) {
         this.doctorId = doctorId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
+        this.password = password;
     }
 
     public int getDoctorId() {
@@ -53,5 +55,13 @@ public class Doctor {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

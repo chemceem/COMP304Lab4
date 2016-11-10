@@ -12,6 +12,8 @@ public class Patient {
     private int doctoId;
     private int roomNo;
 
+    public static final String TABLE = "patient";
+    public static final String TAG = Patient.class.getSimpleName();
 
     public Patient(){}
 

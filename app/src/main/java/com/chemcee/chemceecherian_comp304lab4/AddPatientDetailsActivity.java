@@ -55,15 +55,6 @@ public class AddPatientDetailsActivity extends AppCompatActivity {
 
         editTextTmp = (EditText) findViewById(R.id.roomEditTxt);
         newPatient.setRoomNo(Integer.parseInt(editTextTmp.getText().toString()));
-
-        editTextTmp = (EditText) findViewById(R.id.tempEditTxt);
-        newPatient.setTemperature(Integer.parseInt(editTextTmp.getText().toString()));
-
-        editTextTmp = (EditText) findViewById(R.id.bplEditTxt);
-        newPatient.setBplValue(Integer.parseInt(editTextTmp.getText().toString()));
-
-        editTextTmp = (EditText) findViewById(R.id.bphEditTxt);
-        newPatient.setBphValue(Integer.parseInt(editTextTmp.getText().toString()));
     }
 
     /**

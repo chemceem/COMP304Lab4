@@ -9,11 +9,15 @@ public class Nurse {
     private String firstName;
     private String lastName;
     private String department;
+    private String password;
+
+    public static final String TABLE = "nurse";
+    public static final String TAG = Nurse.class.getSimpleName();
 
     public Nurse() {
     }
 
-    public Nurse(int nurseId, String firstName, String lastName, String department) {
+    public Nurse(int nurseId, String firstName, String lastName, String department, String password) {
         this.nurseId = nurseId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -50,5 +54,13 @@ public class Nurse {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
