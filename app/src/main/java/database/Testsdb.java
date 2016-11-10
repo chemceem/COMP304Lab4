@@ -16,7 +16,7 @@ public class Testsdb {
         tests = new Tests();
     }
 
-    public String create()
+    public static String create()
     {
         String query = "CREATE TABLE "+ Tests.TABLE +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT,testId INTEGER,  patientId INTEGER, bpl INTEGER, bph INTEGER, temperature INTEGER)";
@@ -37,6 +37,8 @@ public class Testsdb {
         values.put("temperature", tests.getTemperature());
 
         id = (int)database.insert(Tests.TABLE, null, values);
+        DatabaseManager.getInstance().closeDB();
+
         return id;
     }
 }

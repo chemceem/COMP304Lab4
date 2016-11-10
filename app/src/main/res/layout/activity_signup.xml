@@ -23,7 +23,7 @@
         android:textAppearance="@android:style/TextAppearance.Small"
         android:text="@string/signup"
         android:id="@+id/titleTxtView"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#6b6363"
         android:layout_alignBottom="@+id/logo"
@@ -58,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText"
+                        android:id="@+id/editText_FirstName"
                         android:layout_below="@+id/logo"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentStart="true"
@@ -73,8 +73,8 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText2"
-                        android:layout_below="@+id/editText"
+                        android:id="@+id/editText_LastName"
+                        android:layout_below="@+id/editText_FirstName"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentStart="true"
                         android:hint="Last Name" />
@@ -88,8 +88,8 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:ems="10"
-                        android:id="@+id/password"
-                        android:layout_below="@+id/editText2"
+                        android:id="@+id/signup_password"
+                        android:layout_below="@+id/editText_LastName"
                         android:layout_alignParentStart="true"
                         android:layout_alignEnd="@+id/titleTxtView"
                         android:hint="Password" />
@@ -104,17 +104,73 @@
                         android:inputType="textPassword"
                         android:ems="10"
                         android:id="@+id/confirmPassword"
-                        android:layout_below="@+id/password"
+                        android:layout_below="@+id/signup_password"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:hint="Confirm Password" />
                 </android.support.design.widget.TextInputLayout>
 
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:id="@+id/radiogroup_category"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButton_doctor"
+                        android:text="@string/login_doctor"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButton_nurse"
+                        android:text="@string/login_nurse" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/department"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_departments"
+                    android:background="#e9e0e0" />
 
 
+                <LinearLayout
+                    android:layout_marginTop="25sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.92"
+                        android:text="@string/signin"
+                        android:onClick="signUp"
+                        android:background="@android:color/holo_blue_light" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.89"
+                        android:text="@string/cancel"
+                        android:onClick="cancel"
+                        android:background="@android:color/holo_red_light" />
+
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 
 </RelativeLayout>

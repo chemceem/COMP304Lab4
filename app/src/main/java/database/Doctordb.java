@@ -41,7 +41,6 @@ public class Doctordb {
 
         id = (int)database.insert(Doctor.TABLE, null, values);
         DatabaseManager.getInstance().closeDB();
-
         return id;
     }
 

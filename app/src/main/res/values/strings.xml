@@ -5,11 +5,24 @@
     <string name="login_nurse">NURSE</string>
     <string name="signup">Sign up as new staff.</string>
     <string name="hospitalLogoDesc">HospitalLogo</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="signin">SIGN IN</string>
     <string name="registerHere">New User? Register Here</string>
+    <string name="department">Department</string>
+    <string name="choose_department">Select Department</string>
+    <string name="cancel">CANCEL</string>
 
     <string-array name="departments">
+        <item>Accident and emergency</item>
+        <item>Admissions</item>
+        <item>Cardiology</item>
+        <item>Gynecology</item>
+        <item>Nephrology</item>
+        <item>Neurology</item>
+    </string-array>
 
+    <string-array name="category">
+        <item>Doctor</item>
+        <item>Nurse</item>
     </string-array>
 
 </resources>

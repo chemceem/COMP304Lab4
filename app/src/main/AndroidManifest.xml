@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddPatientDetailsActivity" />
-        <activity android:name=".Main2Activity" />
         <activity android:name=".Signup"></activity>
     </application>
 
