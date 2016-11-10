@@ -11,22 +11,17 @@ public class Patient {
     private String department;
     private int doctoId;
     private int roomNo;
-    private int temperature;
-    private int bplValue;
-    private int bphValue;
+
 
     public Patient(){}
 
-    public Patient(int patientId, String fname, String lname, String department, int doctoId, int roomNo, int temperature, int bplValue, int bphValue) {
+    public Patient(int patientId, String fname, String lname, String department, int doctoId, int roomNo) {
         this.patientId = patientId;
         this.fname = fname;
         this.lname = lname;
         this.department = department;
         this.doctoId = doctoId;
         this.roomNo = roomNo;
-        this.temperature = temperature;
-        this.bplValue = bplValue;
-        this.bphValue = bphValue;
     }
 
     public int getPatientId() {
@@ -75,29 +70,5 @@ public class Patient {
 
     public void setRoomNo(int roomNo) {
         this.roomNo = roomNo;
-    }
-
-    public int getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(int temperature) {
-        this.temperature = temperature;
-    }
-
-    public int getBplValue() {
-        return bplValue;
-    }
-
-    public void setBplValue(int bplValue) {
-        this.bplValue = bplValue;
-    }
-
-    public int getBphValue() {
-        return bphValue;
-    }
-
-    public void setBphValue(int bphValue) {
-        this.bphValue = bphValue;
     }
 }
