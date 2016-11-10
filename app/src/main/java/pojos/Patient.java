@@ -1,12 +1,11 @@
 package pojos;
 
-import android.content.Intent;
-
 /**
  * Created by a_b on 09-11-2016.
  */
 public class Patient {
 
+    private int patientId;
     private String fname;
     private String lname;
     private String department;
@@ -18,7 +17,8 @@ public class Patient {
 
     public Patient(){}
 
-    public Patient(String fname, String lname, String department, int doctoId, int roomNo, int temperature, int bplValue, int bphValue) {
+    public Patient(int patientId, String fname, String lname, String department, int doctoId, int roomNo, int temperature, int bplValue, int bphValue) {
+        this.patientId = patientId;
         this.fname = fname;
         this.lname = lname;
         this.department = department;
@@ -27,6 +27,14 @@ public class Patient {
         this.temperature = temperature;
         this.bplValue = bplValue;
         this.bphValue = bphValue;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
     }
 
     public String getFname() {

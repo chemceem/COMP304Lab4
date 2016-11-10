@@ -23,13 +23,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|text"
         android:ems="10"
         android:id="@+id/editText_userid"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
         android:hint="User ID" 
-		android:textColor="#ffffff"
+		android:textColor="#040000"
         android:layout_alignEnd="@+id/imageView" />
 
     <EditText
@@ -44,18 +44,43 @@
         android:elegantTextHeight="false"
         android:hint="Password" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/password"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="100sp"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton_doctor"
+            android:text="@string/login_doctor"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton_nurse"
+            android:text="@string/login_nurse"
+            android:textStyle="bold" />
+    </RadioGroup>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:id="@+id/buttonLogin"
-        android:textStyle="bold"
-        android:layout_above="@+id/textView_RegisterHere"
+        android:id="@+id/button_login"
+        android:layout_alignTop="@+id/radioGroup"
+        android:layout_marginTop="57dp"
         android:layout_alignEnd="@+id/radioGroup"
         android:layout_alignParentStart="true"
-        android:background="@android:color/holo_green_light"
-        android:textColor="#fcfbfb"
-        android:textSize="20sp" />
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@android:color/holo_blue_bright"
+        android:textColor="#fcf8f8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,33 +89,6 @@
         android:id="@+id/textView_RegisterHere"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp"
-        android:clickable="true" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/radioGroup"
-        android:orientation="horizontal"
-        android:layout_below="@+id/password"
-        android:layout_alignEnd="@+id/password"
-        android:weightSum="1"
-        android:layout_above="@+id/buttonLogin">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="52sp"
-            android:id="@+id/radioButton_Doctor"
-            android:text="@string/login_doctor"
-            android:textStyle="bold"
-            android:layout_weight="0.19" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="52sp"
-            android:id="@+id/radioButton_Nurse"
-            android:text="@string/login_nurse"
-            android:textStyle="bold" />
-    </RadioGroup>
+        android:layout_marginBottom="23dp" />
 
 </RelativeLayout>

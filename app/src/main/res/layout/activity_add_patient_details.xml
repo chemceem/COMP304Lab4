@@ -39,155 +39,6 @@
         android:layout_below="@+id/logo"
         android:layout_alignParentStart="true" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:minHeight="400dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="First Name : "
-                android:id="@+id/fnameTxtView"
-                android:layout_alignBottom="@+id/fnameEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fnameEditTxt"
-                android:minWidth="200dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Last Name :"
-                android:id="@+id/lnameTxtView"
-                android:layout_marginTop="68dp"
-                android:layout_alignTop="@+id/fnameEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/lnameEditTxt"
-                android:minWidth="200dp"
-                android:layout_alignBottom="@+id/lnameTxtView"
-                android:layout_alignStart="@+id/fnameEditTxt" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/depEditTxt"
-                android:minWidth="200dp"
-                android:layout_below="@+id/lnameEditTxt"
-                android:layout_alignStart="@+id/lnameEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Department"
-                android:id="@+id/depTxtView"
-                android:layout_alignBottom="@+id/depEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/docEditTxt"
-                android:minWidth="200dp"
-                android:layout_below="@+id/depEditTxt"
-                android:layout_alignStart="@+id/depEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Doctor Id"
-                android:id="@+id/docTxtView"
-                android:layout_alignBottom="@+id/docEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/roomEditTxt"
-                android:minWidth="200dp"
-                android:numeric="integer"
-                android:layout_below="@+id/docEditTxt"
-                android:layout_alignStart="@+id/docEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Room No :"
-                android:id="@+id/roomTxtView"
-                android:layout_alignBottom="@+id/roomEditTxt"
-                android:layout_alignStart="@+id/docTxtView" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tempEditTxt"
-                android:minWidth="200dp"
-                android:numeric="integer"
-                android:layout_below="@+id/roomEditTxt"
-                android:layout_alignStart="@+id/roomEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Temperature"
-                android:id="@+id/tempTxtView"
-                android:layout_alignBottom="@+id/tempEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bplEditTxt"
-                android:minWidth="200dp"
-                android:numeric="integer"
-                android:layout_below="@+id/tempEditTxt"
-                android:layout_alignStart="@+id/tempEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="BPL Value"
-                android:id="@+id/bplTxtView"
-                android:layout_alignBottom="@+id/bplEditTxt"
-                android:layout_alignParentStart="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bphEditTxt"
-                android:minWidth="200dp"
-                android:numeric="integer"
-                android:layout_below="@+id/bplEditTxt"
-                android:layout_toEndOf="@+id/roomTxtView"
-                android:layout_alignStart="@+id/bplEditTxt" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="BPH Value"
-                android:id="@+id/bphTxtView"
-                android:layout_alignBottom="@+id/bphEditTxt"
-                android:layout_alignParentStart="true" />
-
-        </RelativeLayout>
     </ScrollView>
 
     <Button
@@ -200,5 +51,158 @@
         android:textColor="#ffffff"
         android:background="@android:color/holo_green_dark"
         android:onClick="onSubmit"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="400dp"
+        android:layout_alignTop="@+id/scrollView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="77dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="First Name : "
+            android:id="@+id/fnameTxtView"
+            android:layout_alignBottom="@+id/fnameEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fnameEditTxt"
+            android:minWidth="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Last Name :"
+            android:id="@+id/lnameTxtView"
+            android:layout_marginTop="68dp"
+            android:layout_alignTop="@+id/fnameEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lnameEditTxt"
+            android:minWidth="200dp"
+            android:layout_alignBottom="@+id/lnameTxtView"
+            android:layout_alignStart="@+id/fnameEditTxt" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/depEditTxt"
+            android:minWidth="200dp"
+            android:layout_below="@+id/lnameEditTxt"
+            android:layout_alignStart="@+id/lnameEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Department"
+            android:id="@+id/depTxtView"
+            android:layout_alignBottom="@+id/depEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/docEditTxt"
+            android:minWidth="200dp"
+            android:layout_below="@+id/depEditTxt"
+            android:layout_alignStart="@+id/depEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Doctor Id"
+            android:id="@+id/docTxtView"
+            android:layout_alignBottom="@+id/docEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/roomEditTxt"
+            android:minWidth="200dp"
+            android:numeric="integer"
+            android:layout_below="@+id/docEditTxt"
+            android:layout_alignStart="@+id/docEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Room No :"
+            android:id="@+id/roomTxtView"
+            android:layout_alignBottom="@+id/roomEditTxt"
+            android:layout_alignStart="@+id/docTxtView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tempEditTxt"
+            android:minWidth="200dp"
+            android:numeric="integer"
+            android:layout_below="@+id/roomEditTxt"
+            android:layout_alignStart="@+id/roomEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Temperature"
+            android:id="@+id/tempTxtView"
+            android:layout_alignBottom="@+id/tempEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bplEditTxt"
+            android:minWidth="200dp"
+            android:numeric="integer"
+            android:layout_below="@+id/tempEditTxt"
+            android:layout_alignStart="@+id/tempEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="BPL Value"
+            android:id="@+id/bplTxtView"
+            android:layout_alignBottom="@+id/bplEditTxt"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bphEditTxt"
+            android:minWidth="200dp"
+            android:numeric="integer"
+            android:layout_below="@+id/bplEditTxt"
+            android:layout_toEndOf="@+id/roomTxtView"
+            android:layout_alignStart="@+id/bplEditTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="BPH Value"
+            android:id="@+id/bphTxtView"
+            android:layout_alignBottom="@+id/bphEditTxt"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
