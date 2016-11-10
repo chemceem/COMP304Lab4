@@ -43,7 +43,7 @@ public class Signup extends AppCompatActivity {
 
         etfirstName = (EditText)findViewById(R.id.editText_FirstName);
         etlastName = (EditText)findViewById(R.id.editText_LastName);
-        etPassword = (EditText)findViewById(R.id.signup_password);
+        etPassword = (EditText)findViewById(R.id.login_password);
         etConfirmPassword = (EditText)findViewById(R.id.confirmPassword);
         radioGroup = (RadioGroup)findViewById(R.id.radiogroup_category);
 

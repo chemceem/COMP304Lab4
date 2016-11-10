@@ -88,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:ems="10"
-                        android:id="@+id/signup_password"
+                        android:id="@+id/login_password"
                         android:layout_below="@+id/editText_LastName"
                         android:layout_alignParentStart="true"
                         android:layout_alignEnd="@+id/titleTxtView"
@@ -104,7 +104,7 @@
                         android:inputType="textPassword"
                         android:ems="10"
                         android:id="@+id/confirmPassword"
-                        android:layout_below="@+id/signup_password"
+                        android:layout_below="@+id/login_password"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:hint="Confirm Password" />
