@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import application.App;
+import com.chemcee.chemceecherian_comp304lab4.application.App;
 import pojos.Doctor;
 import pojos.Nurse;
 import pojos.Patient;

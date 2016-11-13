@@ -34,6 +34,7 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        category = null;
         spinner = (Spinner)findViewById(R.id.spinner_departments);
         departments = getResources().getStringArray(R.array.departments);
 
@@ -46,6 +47,9 @@ public class Signup extends AppCompatActivity {
         etPassword = (EditText)findViewById(R.id.login_password);
         etConfirmPassword = (EditText)findViewById(R.id.confirmPassword);
         radioGroup = (RadioGroup)findViewById(R.id.radiogroup_category);
+
+        int tempRadioBtnId = radioGroup.getCheckedRadioButtonId();
+        category = ((RadioButton)findViewById(tempRadioBtnId)).getText().toString();
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
 
@@ -62,7 +66,6 @@ public class Signup extends AppCompatActivity {
 
     public void signUp(View view)
     {
-
         firstName = etfirstName.getText().toString();
         lastName = etlastName.getText().toString();
         password = etPassword.getText().toString();
@@ -103,7 +106,12 @@ public class Signup extends AppCompatActivity {
 
                 Nursedb nursedb = new Nursedb();
                 nursedb.insert(nurse);
-            } else
+
+                Intent intent = new Intent(this, ConfirmSignUp.class);
+                intent.putExtra("category", category);
+                intent.putExtra("staff",nurse);
+                startActivity(intent);
+            } else if(category.equalsIgnoreCase(doctor))
             {
                 Doctor doctor = new Doctor();
                 int id = (int)new Date().getTime();
@@ -115,6 +123,11 @@ public class Signup extends AppCompatActivity {
 
                 Doctordb doctordb = new Doctordb();
                 doctordb.insert(doctor);
+
+                Intent intent = new Intent(this, ConfirmSignUp.class);
+                intent.putExtra("category", category);
+                intent.putExtra("staff",doctor);
+                startActivity(intent);
             }
         }
     }

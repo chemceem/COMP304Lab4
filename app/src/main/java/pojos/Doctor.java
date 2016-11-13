@@ -1,9 +1,11 @@
 package pojos;
 
+import java.io.Serializable;
+
 /**
  * Created by Chemcee. M. C on 09-11-2016.
  */
-public class Doctor {
+public class Doctor implements Serializable{
 
     private int doctorId;
     private String firstName;

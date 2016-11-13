@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import database.Doctordb;
 import database.Nursedb;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         etUserid = (EditText)findViewById(R.id.editText_userid);
         etPassword = (EditText)findViewById(R.id.login_password);
+
+        int tempRadioBtnId = radioGroup.getCheckedRadioButtonId();
+        category = ((RadioButton)findViewById(tempRadioBtnId)).getText().toString();
 
         //on clicking, new user signup
         signup.setOnClickListener(new View.OnClickListener(){
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         if(category.equalsIgnoreCase("Nurse"))
         {
             //checking authentication
-            String name = Doctordb.authenticate(userid, password);
+            String name = Nursedb.authenticate(userid, password);
 
             if(name != null && !name.isEmpty())
                 loginStatus = true;
@@ -91,12 +95,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             } else
             {
-
+                Toast.makeText(MainActivity.this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+                return;
             }
         } else if(category.equalsIgnoreCase("doctor"))
         {
             //checking authentication
-            String name = Nursedb.authenticate(userid, password);
+            String name = Doctordb.authenticate(userid, password);
 
             if(name != null && !name.isEmpty())
                 loginStatus = true;
@@ -106,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, Doctor_Home.class);
                 intent.putExtra("firstName", name);
                 startActivity(intent);
+            } else {
+                Toast.makeText(MainActivity.this, "Invalid username/password", Toast.LENGTH_SHORT).show();
+                return;
             }
         }
     }

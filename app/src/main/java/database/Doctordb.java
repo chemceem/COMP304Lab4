@@ -56,11 +56,14 @@ public class Doctordb {
 
         Cursor cursor = database.query(Doctor.TABLE, projection, where, null, null, null, null);
 
-        if(cursor!= null && (cursor.getCount() == 1))
-        {
-            return cursor.getColumnName(1);
+        if (cursor.moveToFirst()) {
+           String value = cursor.getString(cursor.getColumnIndex("firstName"));
+            cursor.close();
+            return value;
         }
-        else
+        else{
+            cursor.close();
             return null;
+        }
     }
 }

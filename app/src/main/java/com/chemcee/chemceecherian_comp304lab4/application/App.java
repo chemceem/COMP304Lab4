@@ -1,4 +1,4 @@
-package application;
+package com.chemcee.chemceecherian_comp304lab4.application;
 
 import android.app.Application;
 import android.content.Context;
