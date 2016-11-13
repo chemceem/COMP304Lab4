@@ -21,7 +21,7 @@ public class Nursedb
     //creating the table
     public static String createTable()
     {
-        String query = "CREATE TABLE "+Nurse.TABLE+ "(id INTEGER PRIMARY KEY AUTOINCREMENT, nurseId INTEGER, firstName TEXT, lastName TEXT, department TEXT, password TEXT)";
+        String query = "CREATE TABLE "+Nurse.TABLE+ "(id INTEGER PRIMARY KEY AUTOINCREMENT, nurseId INTEGER,userName TEXT, firstName TEXT, lastName TEXT, department TEXT, password TEXT)";
         return  query;
     }
 
@@ -32,6 +32,7 @@ public class Nursedb
         SQLiteDatabase database = DatabaseManager.getInstance().openDB();
         ContentValues values = new ContentValues();
         values.put("nurseId", nurse.getNurseId());
+        values.put("userName", nurse.getUserName());
         values.put("firstName", nurse.getFirstName());
         values.put("lastName", nurse.getLastName());
         values.put("department", nurse.getDepartment());
@@ -41,15 +42,36 @@ public class Nursedb
         return id;
     }
 
-    //method to authenticate doctor
-    public static String authenticate(String nurseid, String password)
+    //check if username exists
+    public static boolean checkUsername(String userName)
     {
         SQLiteDatabase database = DatabaseManager.getInstance().openDB();
         String[] projection = {
-                "nurseId", "firstName"
+                "userName"
         };
 
-        String where = "nurseId = "+nurseid+ " and password = '"+password+"'";
+        String where = "userName = '"+userName.toLowerCase()+"'";
+        Cursor cursor = database.query(Nurse.TABLE, projection, where, null, null, null, null);
+
+        if (cursor.moveToFirst()) { //if username exists
+            cursor.close();
+            return true;
+        }
+        else{
+            cursor.close();
+            return false;
+        }
+    }
+
+    //method to authenticate doctor
+    public static String authenticate(String userName, String password)
+    {
+        SQLiteDatabase database = DatabaseManager.getInstance().openDB();
+        String[] projection = {
+                "userName", "firstName"
+        };
+
+        String where = "userName = '"+userName+ "' and password = '"+password+"'";
 
         Cursor cursor = database.query(Nurse.TABLE, projection, where, null, null, null, null);
 

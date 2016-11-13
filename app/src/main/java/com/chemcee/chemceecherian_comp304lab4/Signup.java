@@ -23,8 +23,8 @@ public class Signup extends AppCompatActivity {
     static final String nurse = "NURSE";
     static final String doctor = "DOCTOR";
 
-    String firstName, lastName, password, confirmPassword, department, category;
-    EditText etfirstName, etlastName, etPassword, etConfirmPassword;
+    String firstName, lastName, password, confirmPassword, department,userName, category;
+    EditText etfirstName, etlastName,etUserName, etPassword, etConfirmPassword;
     Spinner spinner;
     String[] departments;
     RadioGroup radioGroup;
@@ -42,6 +42,7 @@ public class Signup extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
 
+        etUserName = (EditText)findViewById(R.id.editText_userName);
         etfirstName = (EditText)findViewById(R.id.editText_FirstName);
         etlastName = (EditText)findViewById(R.id.editText_LastName);
         etPassword = (EditText)findViewById(R.id.login_password);
@@ -66,13 +67,31 @@ public class Signup extends AppCompatActivity {
 
     public void signUp(View view)
     {
+        userName = etUserName.getText().toString();
         firstName = etfirstName.getText().toString();
         lastName = etlastName.getText().toString();
         password = etPassword.getText().toString();
         confirmPassword = etConfirmPassword.getText().toString();
         department = spinner.getSelectedItem().toString();
 
-        if(firstName.isEmpty()&& firstName.length()<1)
+        Nursedb nursedb = new Nursedb();
+        Doctordb doctordb = new Doctordb();
+
+        if(userName.isEmpty() && userName.length()<1){
+            etUserName.setError("Required Field");
+            return;
+        }
+        else if(category.equalsIgnoreCase(doctor) && doctordb.checkUsername(userName)){
+                etUserName.setError(" Username exists.");
+                Toast.makeText(getApplicationContext(), "Username already taken. Choose another username", Toast.LENGTH_LONG).show();
+                return;
+        }
+        else if(category.equalsIgnoreCase(nurse) && nursedb.checkUsername(userName)){
+            etUserName.setError(" Username exists.");
+            Toast.makeText(getApplicationContext(), "Username already taken. Choose another username", Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if(firstName.isEmpty()&& firstName.length()<1)
         {
             etfirstName.setError("Required Field");
             return;
@@ -98,13 +117,13 @@ public class Signup extends AppCompatActivity {
             {
                 Nurse nurse = new Nurse();
                 int id = (int)new Date().getTime();
+                nurse.setUserName(userName);
                 nurse.setDepartment(department);
                 nurse.setFirstName(firstName);
                 nurse.setLastName(lastName);
                 nurse.setPassword(password);
                 nurse.setNurseId(id);
 
-                Nursedb nursedb = new Nursedb();
                 nursedb.insert(nurse);
 
                 Intent intent = new Intent(this, ConfirmSignUp.class);
@@ -115,13 +134,13 @@ public class Signup extends AppCompatActivity {
             {
                 Doctor doctor = new Doctor();
                 int id = (int)new Date().getTime();
+                doctor.setUserName(userName);
                 doctor.setFirstName(firstName);
                 doctor.setLastName(lastName);
                 doctor.setPassword(password);
                 doctor.setDepartment(department);
                 doctor.setDoctorId(id);
 
-                Doctordb doctordb = new Doctordb();
                 doctordb.insert(doctor);
 
                 Intent intent = new Intent(this, ConfirmSignUp.class);

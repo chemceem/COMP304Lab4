@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Nurse implements Serializable{
 
     private int nurseId;
+    private String userName;
     private String firstName;
     private String lastName;
     private String department;
@@ -19,8 +20,9 @@ public class Nurse implements Serializable{
     public Nurse() {
     }
 
-    public Nurse(int nurseId, String firstName, String lastName, String department, String password) {
+    public Nurse(int nurseId, String userName, String firstName, String lastName, String department, String password) {
         this.nurseId = nurseId;
+        this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.department = department;
@@ -65,4 +67,8 @@ public class Nurse implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getUserName() {return userName; }
+
+    public void setUserName(String userName) { this.userName = userName;    }
 }
