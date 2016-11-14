@@ -20,7 +20,8 @@
         <activity android:name=".Signup" />
         <activity android:name=".Nurse_Home" />
         <activity android:name=".Doctor_Home" />
-        <activity android:name=".ConfirmSignUp"></activity>
+        <activity android:name=".ConfirmSignUp" />
+        <activity android:name=".ViewPatientsList_Nurse"></activity>
     </application>
 
 </manifest>

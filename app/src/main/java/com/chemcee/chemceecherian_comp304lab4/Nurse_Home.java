@@ -27,4 +27,16 @@ public class Nurse_Home extends AppCompatActivity {
         intent.putExtra("firstName", name);
         startActivity(intent);
     }
+
+    public void viewPatients(View view)
+    {
+        Intent intent = new Intent(this, ViewPatientsList_Nurse.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

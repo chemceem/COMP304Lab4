@@ -4,6 +4,9 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pojos.Patient;
 
 /**
@@ -70,6 +73,31 @@ public class Patientdb {
             return null;
         }finally {
             cursor.close();
+        }
+    }
+
+    public static List<Patient> getAllPatients()
+    {
+        List<Patient> patientList = new ArrayList<Patient>();
+        String query = "SELECT * FROM "+Patient.TABLE;
+        SQLiteDatabase database = DatabaseManager.getInstance().openDB();
+        Cursor cursor = database.rawQuery(query,null);
+
+        try
+        {
+            while (cursor.moveToNext())
+            {
+                Patient patient = new Patient();
+                patient.setPatientId(cursor.getInt(cursor.getColumnIndex("patientid")));
+                patient.setFname(cursor.getString(cursor.getColumnIndex("firstName")));
+                patient.setLname(cursor.getString(cursor.getColumnIndex("lastName")));
+
+                patientList.add(patient);
+            }
+            return patientList;
+        } catch (Exception e)
+        {
+            return null;
         }
     }
 }
