@@ -7,14 +7,14 @@ public class Tests {
 
     private int testId;
     private int patientId;
-    private int BPL;
-    private int BPH;
-    private int temperature;
+    private float BPL;
+    private float BPH;
+    private float temperature;
 
     public static final String TABLE = "tests";
     public static final String TAG = Tests.class.getSimpleName();
 
-    public Tests(int testId, int patientId, int BPL, int BPH, int temperature) {
+    public Tests(int testId, int patientId, float BPL, float BPH, float temperature) {
         this.testId = testId;
         this.patientId = patientId;
         this.BPL = BPL;
@@ -41,27 +41,27 @@ public class Tests {
         this.patientId = patientId;
     }
 
-    public int getBPL() {
+    public float getBPL() {
         return BPL;
     }
 
-    public void setBPL(int BPL) {
+    public void setBPL(float BPL) {
         this.BPL = BPL;
     }
 
-    public int getBPH() {
+    public float getBPH() {
         return BPH;
     }
 
-    public void setBPH(int BPH) {
+    public void setBPH(float BPH) {
         this.BPH = BPH;
     }
 
-    public int getTemperature() {
+    public float getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(float temperature) {
         this.temperature = temperature;
     }
 }

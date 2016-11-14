@@ -14,7 +14,7 @@ public class ConfirmSignUp extends AppCompatActivity {
     String category;
     Nurse nurse = null;
     Doctor doctor = null;
-    TextView fname, lname, userid, department, staff;
+    TextView fname, lname, userid, department, staff, userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,13 @@ public class ConfirmSignUp extends AppCompatActivity {
         lname = (TextView) findViewById(R.id.tv_lname);
         department = (TextView) findViewById(R.id.tv_dept);
         userid = (TextView) findViewById(R.id.tv_userid);
+        userName = (TextView) findViewById(R.id.tv_username);
 
         if(category.equalsIgnoreCase("nurse"))          //if a nurse has signed up
         {
             nurse = (Nurse)getIntent().getSerializableExtra("staff");
             staff.setText(category);
+            userName.setText(nurse.getUserName());
             userid.setText(String.valueOf(nurse.getNurseId()));
             fname.setText(nurse.getFirstName().toString());
             lname.setText(nurse.getLastName().toString());
@@ -41,6 +43,7 @@ public class ConfirmSignUp extends AppCompatActivity {
         {
             doctor = (Doctor)getIntent().getSerializableExtra("staff");
             staff.setText(category);
+            userName.setText(doctor.getUserName());
             userid.setText(String.valueOf(doctor.getDoctorId()));
             fname.setText(doctor.getFirstName());
             lname.setText(doctor.getLastName());

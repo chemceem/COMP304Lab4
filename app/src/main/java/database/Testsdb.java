@@ -1,6 +1,7 @@
 package database;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import pojos.Tests;
@@ -19,7 +20,7 @@ public class Testsdb {
     public static String create()
     {
         String query = "CREATE TABLE "+ Tests.TABLE +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT,testId INTEGER,  patientId INTEGER, bpl INTEGER, bph INTEGER, temperature INTEGER)";
+                "(testId INTEGER PRIMARY KEY AUTOINCREMENT, patientId INTEGER, bpl REAL, bph REAL, temperature REAL)";
         return query;
     }
 
@@ -30,7 +31,6 @@ public class Testsdb {
         SQLiteDatabase database = DatabaseManager.getInstance().openDB();
         ContentValues values = new ContentValues();
 
-        values.put("testId", tests.getTestId());
         values.put("patientId", tests.getPatientId());
         values.put("bpl", tests.getBPL());
         values.put("bph", tests.getBPH());
@@ -40,5 +40,59 @@ public class Testsdb {
         DatabaseManager.getInstance().closeDB();
 
         return id;
+    }
+
+    public static int updateTests(int patientid, Tests test)
+    {
+        SQLiteDatabase database = DatabaseManager.getInstance().openDB();
+        ContentValues values = new ContentValues();
+        int status = 1;
+
+        try{
+            values.put("bpl", test.getBPL());
+            values.put("bph", test.getBPH());
+            values.put("temperature", test.getTemperature());
+
+            database.update(Tests.TABLE, values,"patientId="+patientid,null);
+
+            return status;
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
+    public static Tests getTest(int patientid)
+    {
+        SQLiteDatabase database = DatabaseManager.getInstance().openDB();
+        Cursor cursor = null;
+
+        try{
+            String[] projection = {"patientId","testId", "bpl", "bph", "temperature"};
+            String where = "patientId = "+patientid;
+            cursor = database.query(Tests.TABLE, projection,where, null, null, null,null);
+
+            if(cursor.getCount()>0)
+            {
+                cursor.moveToFirst();
+                Tests test = new Tests();
+                test.setPatientId(patientid);
+                test.setTestId(cursor.getInt(cursor.getColumnIndex("testId")));
+                test.setBPL(cursor.getFloat(cursor.getColumnIndex("bpl")));
+                test.setBPH(cursor.getFloat(cursor.getColumnIndex("bph")));
+                test.setTemperature(cursor.getFloat(cursor.getColumnIndex("temperature")));
+
+                return test;
+            }
+            else {
+                return null;
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            cursor.close();
+        }
     }
 }

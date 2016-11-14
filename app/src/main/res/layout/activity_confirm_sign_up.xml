@@ -44,6 +44,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Name: "
+                    android:id="@+id/lblUserName"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/tv_username" />
+
+            </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_margin="15dp">

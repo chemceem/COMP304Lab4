@@ -53,7 +53,8 @@ public class Nursedb
         String where = "userName = '"+userName.toLowerCase()+"'";
         Cursor cursor = database.query(Nurse.TABLE, projection, where, null, null, null, null);
 
-        if (cursor.moveToFirst()) { //if username exists
+        if (cursor.getCount()>0) { //if username exists
+            cursor.moveToFirst();
             cursor.close();
             return true;
         }
@@ -75,7 +76,8 @@ public class Nursedb
 
         Cursor cursor = database.query(Nurse.TABLE, projection, where, null, null, null, null);
 
-        if (cursor.moveToFirst()) {
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
             String value = cursor.getString(cursor.getColumnIndex("firstName"));
             cursor.close();
             return value;

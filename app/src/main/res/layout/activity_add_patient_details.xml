@@ -82,10 +82,10 @@
                 android:layout_alignBottom="@+id/lnameTxtView"
                 android:layout_alignStart="@+id/fnameEditTxt" />
 
-            <EditText
+            <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/depEditTxt"
+                android:id="@+id/spinner_dept"
                 android:minWidth="200dp"
                 android:layout_below="@+id/lnameEditTxt"
                 android:layout_alignStart="@+id/lnameEditTxt" />
@@ -96,7 +96,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Department"
                 android:id="@+id/depTxtView"
-                android:layout_alignBottom="@+id/depEditTxt"
+                android:layout_alignBottom="@+id/spinner_dept"
                 android:layout_alignParentStart="true" />
 
             <EditText
@@ -104,8 +104,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/docEditTxt"
                 android:minWidth="200dp"
-                android:layout_below="@+id/depEditTxt"
-                android:layout_alignStart="@+id/depEditTxt" />
+                android:layout_below="@+id/spinner_dept"
+                android:layout_alignStart="@+id/spinner_dept" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/roomEditTxt"
                 android:minWidth="200dp"
-                android:numeric="integer"
+                android:inputType="number"
                 android:layout_below="@+id/docEditTxt"
                 android:layout_alignStart="@+id/docEditTxt" />
 
@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tempEditTxt"
                 android:minWidth="200dp"
-                android:numeric="integer"
+                android:inputType="numberDecimal"
                 android:layout_below="@+id/roomEditTxt"
                 android:layout_alignStart="@+id/roomEditTxt" />
 
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bplEditTxt"
                 android:minWidth="200dp"
-                android:numeric="integer"
+                android:inputType="numberDecimal"
                 android:layout_below="@+id/tempEditTxt"
                 android:layout_alignStart="@+id/tempEditTxt" />
 
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bphEditTxt"
                 android:minWidth="200dp"
-                android:numeric="integer"
+                android:inputType="numberDecimal"
                 android:layout_below="@+id/bplEditTxt"
                 android:layout_toEndOf="@+id/roomTxtView"
                 android:layout_alignStart="@+id/bplEditTxt" />

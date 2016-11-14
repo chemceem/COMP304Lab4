@@ -24,6 +24,7 @@ public class Nurse_Home extends AppCompatActivity {
     public void newPatient(View view)
     {
         Intent intent = new Intent(this, AddPatientDetailsActivity.class);
+        intent.putExtra("firstName", name);
         startActivity(intent);
     }
 }

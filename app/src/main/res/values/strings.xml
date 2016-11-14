@@ -10,7 +10,7 @@
     <string name="department">Department</string>
     <string name="choose_department">Select Department</string>
     <string name="cancel">CANCEL</string>
-    <string name="signupsuccess">Account Created. \nLogin using the User Id.</string>
+    <string name="signupsuccess">Account Created. \nLogin using Username.</string>
 
     <string-array name="departments">
         <item>Accident and emergency</item>

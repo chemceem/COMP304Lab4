@@ -7,7 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.chemcee.chemceecherian_comp304lab4.Doctor_Home">
+    android:orientation="vertical"
+    tools:context="com.chemcee.chemceecherian_comp304lab4.Doctor_Home"
+    android:weightSum="1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,9 +31,185 @@
             android:textSize="15sp"
             android:textColor="#0e0909"
             android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:hint="Patient ID"
+            android:ems="10"
+            android:id="@+id/et_patientId" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/button_searchPatient"
+            android:layout_gravity="right"
+            android:onClick="searchPatient"
+            android:background="@android:color/holo_red_light"
+            android:elegantTextHeight="true"
+            android:textStyle="bold"
+            android:textSize="20sp" />
 
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp"
+        android:id="@+id/scrollView_PatientDetails">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patient Name: "
+                    android:id="@+id/lblUserName"
+                    android:textStyle="normal|bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/textView_PatientName"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp"
+                    android:textStyle="normal|bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patient ID: "
+                    android:id="@+id/lblId"
+                    android:textStyle="normal|bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/textView_PatientId"
+                    android:textSize="17sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="normal|bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BPH: "
+                    android:id="@+id/lblFname"
+                    android:textStyle="normal|bold"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_doctor_BPH"
+                    android:inputType="numberDecimal"
+                    android:textColor="@android:color/black" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BPL: "
+                    android:id="@+id/lblLname"
+                    android:textStyle="normal|bold"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_doctor_BPL"
+                    android:inputType="numberDecimal"
+                    android:textColor="@android:color/black" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature: "
+                    android:id="@+id/lblDepart"
+                    android:textStyle="normal|bold"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/editText_doctor_Temperature"
+                    android:inputType="numberDecimal"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="UPDATE"
+                    android:id="@+id/button"
+                    android:textSize="20sp"
+                    android:onClick="updatePatientDetails"
+                    android:textStyle="normal"
+                    android:background="@android:color/holo_blue_bright" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="0.5"
+                    android:text="CANCEL"
+                    android:onClick="cancel"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:background="@color/design_textinput_error_color_light" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
